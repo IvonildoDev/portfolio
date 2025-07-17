@@ -14,24 +14,51 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Menu Toggle
     const menuToggle = document.querySelector('.menu-toggle');
+    const menuIcon = document.querySelector('.menu-toggle i');
     const nav = document.querySelector('nav');
+    const overlay = document.querySelector('.mobile-nav-overlay');
+    const body = document.body;
+
+    function openMobileMenu() {
+        nav.classList.add('active');
+        menuIcon.classList.remove('fa-bars');
+        menuIcon.classList.add('fa-times');
+        overlay.classList.add('active');
+        body.classList.add('menu-active');
+    }
+
+    function closeMobileMenu() {
+        nav.classList.remove('active');
+        menuIcon.classList.remove('fa-times');
+        menuIcon.classList.add('fa-bars');
+        overlay.classList.remove('active');
+        body.classList.remove('menu-active');
+    }
 
     if (menuToggle) {
         menuToggle.addEventListener('click', function () {
-            nav.classList.toggle('active');
-            this.classList.toggle('fa-times');
+            if (nav.classList.contains('active')) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
         });
     }
 
-    // Close menu when clicking outside
+    // Close menu when clicking outside or on the overlay
     document.addEventListener('click', function (e) {
-        if (nav && nav.classList.contains('active') && !nav.contains(e.target) && e.target !== menuToggle) {
-            nav.classList.remove('active');
-            if (menuToggle) {
-                menuToggle.classList.remove('fa-times');
-            }
+        if (nav && nav.classList.contains('active') &&
+            !nav.contains(e.target) &&
+            e.target !== menuToggle &&
+            !menuToggle.contains(e.target)) {
+            closeMobileMenu();
         }
     });
+
+    // Close menu when clicking on overlay
+    if (overlay) {
+        overlay.addEventListener('click', closeMobileMenu);
+    }
 
     // Portfolio Filter
     const filterBtns = document.querySelectorAll('.filter-btn');
@@ -220,6 +247,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    // Header scroll effect
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', function () {
+        if (window.pageYOffset > 50) {
+            header.classList.add('scroll');
+        } else {
+            header.classList.remove('scroll');
+        }
+    });
+
     // Smooth scrolling for all internal links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -241,10 +278,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Close mobile menu if open
             if (nav && nav.classList.contains('active')) {
-                nav.classList.remove('active');
-                if (menuToggle) {
-                    menuToggle.classList.remove('fa-times');
-                }
+                closeMobileMenu();
             }
         });
     });
@@ -281,5 +315,82 @@ document.addEventListener('DOMContentLoaded', function () {
             this.src = 'https://via.placeholder.com/250x500/e9ecef/1e3c72?text=App+Screenshot';
             console.log('Por favor, substitua as imagens placeholder pelos screenshots reais dos aplicativos na pasta imgens/apps/');
         });
+    });
+
+    // App Modal Functionality
+    const modal = document.getElementById('appModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDescription');
+    const modalFeatures = document.getElementById('modalFeatures');
+    const modalTech = document.getElementById('modalTech');
+    const closeModalBtn = document.querySelector('.close-modal');
+    const appModalTriggers = document.querySelectorAll('.app-modal-trigger');
+
+    function openModal(img, title, desc, features, tech) {
+        modalImage.src = img;
+        modalTitle.textContent = title;
+        modalDesc.textContent = desc;
+
+        // Clear and populate features list
+        modalFeatures.innerHTML = '';
+        if (features) {
+            const featuresList = features.split(',');
+            featuresList.forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = feature.trim();
+                modalFeatures.appendChild(li);
+            });
+        }
+
+        modalTech.textContent = 'Tecnologias: ' + tech;
+
+        // Show modal with animation
+        modal.style.display = 'block';
+        setTimeout(() => {
+            modal.classList.add('show');
+        }, 10);
+
+        // Prevent body scroll
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        modal.classList.remove('show');
+        setTimeout(() => {
+            modal.style.display = 'none';
+        }, 300);
+        document.body.style.overflow = '';
+    }
+
+    appModalTriggers.forEach(trigger => {
+        trigger.addEventListener('click', function (e) {
+            e.preventDefault();
+            const img = this.getAttribute('data-img');
+            const title = this.getAttribute('data-title');
+            const desc = this.getAttribute('data-desc');
+            const features = this.getAttribute('data-features');
+            const tech = this.getAttribute('data-tech');
+
+            openModal(img, title, desc, features, tech);
+        });
+    });
+
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', closeModal);
+    }
+
+    // Close modal on click outside
+    window.addEventListener('click', function (e) {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    // Close modal on ESC key
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.classList.contains('show')) {
+            closeModal();
+        }
     });
 });

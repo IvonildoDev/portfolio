@@ -17,6 +17,9 @@
         <div class="loader"></div>
     </div>
 
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay"></div>
+
     <!-- Header com navegação -->
     <header>
         <div class="header-top">
@@ -32,7 +35,7 @@
 
         <div class="header-main">
             <div class="container">
-                <div class="logo">Ivonildo<span>Lima</span></div>
+                <div class="logo"><a href="#"><img src="imagens/logo.png" alt="Ivonildo Lima - Web Developer"></a></div>
                 <nav>
                     <ul>
                         <li><a href="#sobre" class="active">Sobre</a></li>
@@ -77,8 +80,8 @@
                     <div class="profile-image">
                         <img src="imagens/Ivonildo.jpg" alt="Ivonildo Lima - Desenvolvedor Web">
                         <div class="experience-badge">
-                            <span class="number">5+</span>
-                            <span class="text">Anos de<br>Experiência</span>
+                            <span class="number">1+</span>
+                            <span class="text">Ano de<br>Experiência</span>
                         </div>
                     </div>
                 </div>
@@ -238,8 +241,32 @@
                 <div class="portfolio-item" data-category="website">
                     <div class="portfolio-card">
                         <div class="portfolio-preview">
+                            <a href="https://resumofilmes.netlify.app/" target="_blank" class="react-project">
+                                <img src="imagens/resumofilmes.PNG" alt="Resumo Filmes - TMDB">
+                            </a>
+                            <div class="portfolio-overlay">
+                                <a href="https://resumofilmes.netlify.app/" target="_blank" class="btn-view">Visitar
+                                    Site</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <span class="portfolio-category">Website em React</span>
+                            <h3>Resumo Filmes <i class="fab fa-react react-icon"></i></h3>
+                            <p>Aplicação web desenvolvida em React que utiliza a API TMDB para exibir informações sobre
+                                filmes, incluindo sinopses, avaliações e detalhes do elenco. feito junto do curso sujeto
+                                Programador</p>
+                            <a href="https://resumofilmes.netlify.app/" target="_blank" class="portfolio-link">
+                                <i class="fas fa-external-link-alt"></i> Acessar Website
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="website">
+                    <div class="portfolio-card">
+                        <div class="portfolio-preview">
                             <a href="https://tertobarbearia.netlify.app/" target="_blank">
-                                <img src="imagens/tertobarbearia.jpg" alt="Terto Barbearia">
+                                <img src="imagens/terto.PNG" alt="Terto Barbearia">
                             </a>
                             <div class="portfolio-overlay">
                                 <a href="https://tertobarbearia.netlify.app/" target="_blank" class="btn-view">Visitar
@@ -251,7 +278,7 @@
                             <h3>Terto Barbearia</h3>
                             <p>Site para barbearia com agendamento online e exibição de serviços.</p>
                             <a href="https://tertobarbearia.netlify.app/" target="_blank" class="portfolio-link">
-                                <i class="fas fa-external-link-alt"></i> tertobarbearia.netlify.app
+                                <i class="fas fa-external-link-alt"></i> Acessar Website
                             </a>
                         </div>
                     </div>
@@ -261,7 +288,7 @@
                     <div class="portfolio-card">
                         <div class="portfolio-preview">
                             <a href="https://scv-2.netlify.app/" target="_blank">
-                                <img src="imagens/scv2.jpg" alt="SCV-2">
+                                <img src="imagens/scv-2.PNG" alt="SCV-2">
                             </a>
                             <div class="portfolio-overlay">
                                 <a href="https://scv-2.netlify.app/" target="_blank" class="btn-view">Visitar Site</a>
@@ -270,9 +297,10 @@
                         <div class="portfolio-info">
                             <span class="portfolio-category">Sistema Web</span>
                             <h3>SCV-2</h3>
-                            <p>Sistema de controle de vendas com interface moderna e responsiva.</p>
+                            <p>Sistema de controle de visitantes focado em igrejas com interface moderna e responsiva.
+                            </p>
                             <a href="https://scv-2.netlify.app/" target="_blank" class="portfolio-link">
-                                <i class="fas fa-external-link-alt"></i> scv-2.netlify.app
+                                <i class="fas fa-external-link-alt"></i> Acessar Sistema
                             </a>
                         </div>
                     </div>
@@ -282,7 +310,7 @@
                     <div class="portfolio-card">
                         <div class="portfolio-preview">
                             <a href="https://siscontroloperacao.netlify.app/" target="_blank">
-                                <img src="imagens/controleoperacao.jpg" alt="Sistema de Controle de Operações">
+                                <img src="imagens/operacao.PNG" alt="Sistema de Controle de Operações">
                             </a>
                             <div class="portfolio-overlay">
                                 <a href="https://siscontroloperacao.netlify.app/" target="_blank"
@@ -294,7 +322,7 @@
                             <h3>Sistema de Controle de Operações</h3>
                             <p>Aplicativo web para gerenciamento de operações empresariais.</p>
                             <a href="https://siscontroloperacao.netlify.app/" target="_blank" class="portfolio-link">
-                                <i class="fas fa-external-link-alt"></i> siscontroloperacao.netlify.app
+                                <i class="fas fa-external-link-alt"></i> Acessar Sistema
                             </a>
                         </div>
                     </div>
@@ -316,7 +344,7 @@
                             <h3>Jorge Lavanderia</h3>
                             <p>Site para lavanderia com sistema de pedidos e acompanhamento de serviços.</p>
                             <a href="https://jorgelavanderia.netlify.app/" target="_blank" class="portfolio-link">
-                                <i class="fas fa-external-link-alt"></i> jorgelavanderia.netlify.app
+                                <i class="fas fa-external-link-alt"></i> Acessar Website
                             </a>
                         </div>
                     </div>
@@ -326,7 +354,7 @@
                     <div class="portfolio-card">
                         <div class="portfolio-preview">
                             <a href="https://ministerioelohim.netlify.app/" target="_blank">
-                                <img src="imagens/Elohim.PNG" alt="Ministério Elohim">
+                                <img src="imagens/Elohim.PNG" alt="Elohim">
                             </a>
                             <div class="portfolio-overlay">
                                 <a href="https://ministerioelohim.netlify.app/" target="_blank" class="btn-view">Visitar
@@ -338,7 +366,7 @@
                             <h3>Ministério Elohim</h3>
                             <p>Site institucional para organização religiosa com agenda de eventos.</p>
                             <a href="https://ministerioelohim.netlify.app/" target="_blank" class="portfolio-link">
-                                <i class="fas fa-external-link-alt"></i> ministerioelohim.netlify.app
+                                <i class="fas fa-external-link-alt"></i> Acessar Website
                             </a>
                         </div>
                     </div>
@@ -360,7 +388,7 @@
                             <h3>Checklist Operacional</h3>
                             <p>Aplicativo para gerenciamento de checklists operacionais em empresas.</p>
                             <a href="https://cheklistop.netlify.app/" target="_blank" class="portfolio-link">
-                                <i class="fas fa-external-link-alt"></i> cheklistop.netlify.app
+                                <i class="fas fa-external-link-alt"></i> Acessar Sistema
                             </a>
                         </div>
                     </div>
@@ -369,18 +397,32 @@
                 <div class="portfolio-item" data-category="app">
                     <div class="portfolio-card">
                         <div class="portfolio-preview mobile-app">
-                            <a href="#">
+                            <a href="javascript:void(0);" class="app-modal-trigger" data-img="imagens/calcvol.png"
+                                data-title="CalcVol - Petro Solutions"
+                                data-desc="Aplicativo de alta precisão para cálculos de volume em operações de petróleo, desenvolvido para otimizar processos em campo."
+                                data-features="Cálculos de volumes em tanques,Conversão de unidades,Relatórios em PDF,Modo offline"
+                                data-tech="React Native, SQLite, Firebase">
                                 <img src="imagens/calcvol.png" alt="App CalcVol">
                             </a>
                             <div class="portfolio-overlay">
-                                <span class="btn-view">Aplicativo Mobile</span>
+                                <a href="javascript:void(0);" class="btn-view app-view-details app-modal-trigger"
+                                    data-img="imagens/calcvol.png" data-title="CalcVol - Petro Solutions"
+                                    data-desc="Aplicativo de alta precisão para cálculos de volume em operações de petróleo, desenvolvido para otimizar processos em campo."
+                                    data-features="Cálculos de volumes em tanques,Conversão de unidades,Relatórios em PDF,Modo offline"
+                                    data-tech="React Native, SQLite, Firebase">Ver Detalhes</a>
                             </div>
                         </div>
                         <div class="portfolio-info">
                             <span class="portfolio-category">App Móvel</span>
                             <h3>CalcVol - Petro Solutions</h3>
                             <p>Aplicativo móvel para cálculos de volume em operações de petróleo.</p>
-                            <span class="portfolio-badge">App Móvel</span>
+                            <a href="javascript:void(0);" class="portfolio-link app-modal-trigger"
+                                data-img="imagens/calcvol.png" data-title="CalcVol - Petro Solutions"
+                                data-desc="Aplicativo de alta precisão para cálculos de volume em operações de petróleo, desenvolvido para otimizar processos em campo."
+                                data-features="Cálculos de volumes em tanques,Conversão de unidades,Relatórios em PDF,Modo offline"
+                                data-tech="React Native, SQLite, Firebase">
+                                <i class="fas fa-info-circle"></i> Ver Detalhes
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -388,18 +430,32 @@
                 <div class="portfolio-item" data-category="app">
                     <div class="portfolio-card">
                         <div class="portfolio-preview mobile-app">
-                            <a href="#">
+                            <a href="javascript:void(0);" class="app-modal-trigger" data-img="imagens/siscop.png"
+                                data-title="SisCop - Controle de Deslocamento"
+                                data-desc="Aplicativo para gerenciamento e controle de deslocamentos em campo, oferecendo rastreamento em tempo real e otimização de rotas."
+                                data-features="Rastreamento em tempo real,Registro de quilometragem,Gestão de combustível,Relatórios gerenciais"
+                                data-tech="React Native, Redux, Google Maps API">
                                 <img src="imagens/siscop.png" alt="App Controle de Deslocamento">
                             </a>
                             <div class="portfolio-overlay">
-                                <span class="btn-view">Aplicativo Mobile</span>
+                                <a href="javascript:void(0);" class="btn-view app-view-details app-modal-trigger"
+                                    data-img="imagens/siscop.png" data-title="SisCop - Controle de Deslocamento"
+                                    data-desc="Aplicativo para gerenciamento e controle de deslocamentos em campo, oferecendo rastreamento em tempo real e otimização de rotas."
+                                    data-features="Rastreamento em tempo real,Registro de quilometragem,Gestão de combustível,Relatórios gerenciais"
+                                    data-tech="React Native, Redux, Google Maps API">Ver Detalhes</a>
                             </div>
                         </div>
                         <div class="portfolio-info">
                             <span class="portfolio-category">App Móvel</span>
                             <h3>Controle de Deslocamento</h3>
                             <p>Sistema de controle de deslocamento para frotas de veículos.</p>
-                            <span class="portfolio-badge">App Móvel</span>
+                            <a href="javascript:void(0);" class="portfolio-link app-modal-trigger"
+                                data-img="imagens/siscop.png" data-title="SisCop - Controle de Deslocamento"
+                                data-desc="Aplicativo para gerenciamento e controle de deslocamentos em campo, oferecendo rastreamento em tempo real e otimização de rotas."
+                                data-features="Rastreamento em tempo real,Registro de quilometragem,Gestão de combustível,Relatórios gerenciais"
+                                data-tech="React Native, Redux, Google Maps API">
+                                <i class="fas fa-info-circle"></i> Ver Detalhes
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -498,7 +554,9 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <h3>Ivonildo<span>Lima</span></h3>
+                    <a href="#">
+                        <img src="imagens/logo.png" alt="Ivonildo Lima - Web Developer">
+                    </a>
                     <p>Desenvolvedor Web</p>
                 </div>
 
@@ -541,6 +599,31 @@
     <a href="#" class="back-to-top" id="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </a>
+
+    <!-- Modal para Apps -->
+    <div class="app-modal" id="appModal">
+        <div class="app-modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="app-modal-body">
+                <div class="app-modal-image">
+                    <img src="" alt="App Preview" id="modalImage">
+                </div>
+                <div class="app-modal-info">
+                    <h3 id="modalTitle">Nome do App</h3>
+                    <p id="modalDescription">Descrição do aplicativo será exibida aqui.</p>
+                    <div class="app-modal-features">
+                        <h4>Principais recursos:</h4>
+                        <ul id="modalFeatures">
+                            <!-- Features serão inseridas dinamicamente -->
+                        </ul>
+                    </div>
+                    <div class="app-modal-tech">
+                        <span id="modalTech">Tecnologias: React Native, Firebase</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
