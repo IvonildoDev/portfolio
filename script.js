@@ -37,6 +37,34 @@ document.addEventListener('DOMContentLoaded', function () {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const portfolioItems = document.querySelectorAll('.portfolio-item');
 
+    // Function to filter portfolio items
+    function filterPortfolio(filterValue) {
+        portfolioItems.forEach(item => {
+            const category = item.getAttribute('data-category');
+
+            if (filterValue === 'all') {
+                item.style.display = 'block';
+                setTimeout(() => {
+                    item.style.transform = 'scale(1)';
+                    item.style.opacity = '1';
+                }, 100);
+            } else if (category === filterValue) {
+                item.style.display = 'block';
+                setTimeout(() => {
+                    item.style.transform = 'scale(1)';
+                    item.style.opacity = '1';
+                }, 100);
+            } else {
+                item.style.transform = 'scale(0.8)';
+                item.style.opacity = '0';
+                setTimeout(() => {
+                    item.style.display = 'none';
+                }, 300);
+            }
+        });
+    }
+
+    // Add click event to filter buttons
     filterBtns.forEach(btn => {
         btn.addEventListener('click', function () {
             // Remove active class from all buttons
@@ -45,30 +73,12 @@ document.addEventListener('DOMContentLoaded', function () {
             this.classList.add('active');
 
             const filter = this.getAttribute('data-filter');
-
-            portfolioItems.forEach(item => {
-                if (filter === 'all') {
-                    item.style.display = 'block';
-                    setTimeout(() => {
-                        item.style.transform = 'scale(1)';
-                        item.style.opacity = '1';
-                    }, 100);
-                } else if (item.classList.contains(filter)) {
-                    item.style.display = 'block';
-                    setTimeout(() => {
-                        item.style.transform = 'scale(1)';
-                        item.style.opacity = '1';
-                    }, 100);
-                } else {
-                    item.style.transform = 'scale(0.8)';
-                    item.style.opacity = '0';
-                    setTimeout(() => {
-                        item.style.display = 'none';
-                    }, 300);
-                }
-            });
+            filterPortfolio(filter);
         });
     });
+
+    // Initialize with "all" filter
+    filterPortfolio('all');
 
     // Skill Progress Bars Animation
     const progressBars = document.querySelectorAll('.progress-bar');
